@@ -55,4 +55,3 @@ navLink.forEach(n => n.addEventListener('click', linkAction));
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-
