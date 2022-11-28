@@ -2,7 +2,7 @@
 
 const navMenu = document.getElementById('nav-menu'),
         navToggle = document.getElementById('nav-toggle'),
-        navClose = document.getElementById('nav-closee');
+        navClose = document.getElementById('nav-close');
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
@@ -183,7 +183,31 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme());
     localStorage.setItem('selected-icon', getCurrentIcon());
 }); 
+
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 
+const scrollHeader = () => {
+    const header = document.getElementById('header')
+
+    // When the scroll is greater than 50 wiewport height, add the scroll-header class to the header tag
+    this.scrollY >= 50 ? header.classList.add('bg-header')
+                        :header.classList.remove('bg-header');
+}
+
+window.addEventListener('scroll', scrollHeader);
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    // Reset: true /* Animations repeat */
+});
+
+sr.reveal(`.home__data, .projects__container, .testimonial__container, .footer__container` )
+sr.reveal(`home__info div`, {delay: 600, origin: 'buttom', interval: 100})
+sr.reveal(`.skills__content:nth-child(1), .contact__content:nth-child(1)`, {origin: 'letf'})
+sr.reveal(`.skills__content:nth-child(2), .contact__content:nth-child(2)`, {origin: 'right'})
+sr.reveal(`.qualification__content, .services__card`, {inverval: 100})
