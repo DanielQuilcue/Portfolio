@@ -1,6 +1,6 @@
 # 💼 Responsive Personal Portfolio
 
-- Responsive peronal portfolio website design using HTML, CSS and JavaScript.
+- Responsive person portfolio website design using HTML, CSS and JavaScript.
 - Includes a light and dark theme.
 - contains animations when scrolling.
 - Includes a form to send emails.
