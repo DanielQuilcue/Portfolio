@@ -1418,3 +1418,11 @@ body.dark-theme {
   }
 
 }
+
+.width__svg {
+  width: 100px !important;
+}
+
+.width__terminal {
+  width: 50px !important;
+}
