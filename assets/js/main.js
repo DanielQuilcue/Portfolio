@@ -116,27 +116,29 @@ contactForm.addEventListener('submit', sendEmail)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
-const sections = document.querySelectorAll('section[id]')
-    
-const scrollActive = () =>{
+const sections = document.querySelectorAll('section[id]');
 
-    const scrollY = window.pageYOffset
+const scrollActive = () => {
+    const scrollDown = window.scrollY;
 
-	sections.forEach(current =>{
-		const sectionHeight = current.offsetHeight,
-			sectionTop = current.offsetTop - 58,
-			sectionId = current.getAttribute('id'),
-			sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight,
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionsClass = document.querySelector('.nav__menu a[href="#' + sectionId + '"]');
 
-		if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-			sectionsClass.classList.add('active-link')
-		}else{
-			sectionsClass.classList.remove('active-link')
-		}                                                    
-	})
-}
-window.addEventListener('scroll', scrollActive)
+        if (sectionsClass) {
+            if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+                sectionsClass.classList.add('active-link');
+            } else {
+                sectionsClass.classList.remove('active-link');
+            }
+        }
 
+    });
+};
+
+window.addEventListener('scroll', scrollActive);
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
@@ -211,3 +213,30 @@ sr.reveal(`home__info div`, {delay: 600, origin: 'buttom', interval: 100})
 sr.reveal(`.skills__content:nth-child(1), .contact__content:nth-child(1)`, {origin: 'letf'})
 sr.reveal(`.skills__content:nth-child(2), .contact__content:nth-child(2)`, {origin: 'right'})
 sr.reveal(`.qualification__content, .services__card`, {inverval: 100})
+
+
+// // Loading
+// // Obtén una referencia al elemento de carga
+// const loadingElement = document.getElementById('loading');
+
+// // Función para mostrar el elemento de carga
+// function showLoading() {
+//     loadingElement.style.display = 'flex';
+// }
+
+// // Función para ocultar el elemento de carga
+// function hideLoading() {
+//     loadingElement.style.display = 'none';
+// }
+
+// // Simula una operación asíncrona (puedes reemplazar esto con tu lógica real)
+// function simulateAsyncOperation() {
+//     showLoading();
+//     setTimeout(() => {
+//         // Simula la finalización de la operación después de 3 segundos
+//         hideLoading();
+//     }, 3000);
+// }
+
+// // Llama a la función para simular la operación asíncrona al cargar la página (solo para demostración)
+// simulateAsyncOperation();
