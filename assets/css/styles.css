@@ -498,7 +498,9 @@ body.dark-theme {
 }
 
 /*=============== QUALIFICATION ===============*/
-
+.add_bottom {
+  margin-bottom: 127px;
+}
 .qualification {
   position: relative;
 }
